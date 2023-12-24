@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clock</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./images/icon.jpg">
 </head>
 <body>
     <div class="container">
         <div class="child-content">
             <div class="calendar">
                 <span id="day">Monday</span>
-                <span id="date">13 Desember 2023</span>
+                <span id="date">13 December 2023</span>
                 <span id="hrs">00</span>
                 <span class="space">:</span>
                 <span id="mins">00</span>
+            </div>
+            <div class="weather">
+                <div class="weather-icon"></div>
+                <span id="temp">40°C</span>
+                <span id="city">Jakarta</span>
             </div>
         </div>
     </div>
@@ -25,20 +31,34 @@
         let hrs = document.getElementById('hrs');
         let min = document.getElementById('mins');
 
+        const apiKey = "08f1dc9b8e07aecdc21e77c84b95a5bc";
+        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=Jakarta";
 
+        async function weatherChecker(){
+            const response = await fetch(apiUrl + `&appid=${apiKey}`);
+            var weatherData = await response.json();
+
+            console.log(weatherData);
+
+            document.querySelector("#city").innerHTML = weatherData.name;
+            document.querySelector("#temp").innerHTML = Math.round(weatherData.main.temp) + "°C";
+        };
+
+        weatherChecker();
 
     setInterval(()=>{
         let syncTime = new Date();
 
         const weekdays = ['Sunday', 'Monday', 'Tuesday',
                         'Wednesday', 'Thursday',
-                         'Friday', 'Saturday']
+                         'Friday', 'Saturday'
+        ];
 
         const months = ['January', 'February', 'March',
                         'April', 'May', 'June', 'July',
                         'August', 'September', 'October',
                         'November', 'December'
-    ];
+        ];
 
 
         let dates = [syncTime.getDate(),
@@ -48,20 +68,17 @@
 
         let commasDates = dates.join(" ");
 
-        let hrsDecimal = [
-          '00','01','02','03','04','05','06','07','08'
-          ,'09','10','11','12','13','14','15','16','17',
-          '18','19','20','21','22','23'
-        ];
-
         day.innerHTML = weekdays[syncTime.getDay()];
         date.innerHTML = commasDates;
-        hrs.innerHTML = hrsDecimal[syncTime.getHours()];
-        min.innerHTML = syncTime.getMinutes();
+
+        hrs.innerHTML = (syncTime.getHours()<10?"0":"") 
+        + syncTime.getHours();
+        
+        min.innerHTML = (syncTime.getMinutes()<10?"0":"") 
+        + syncTime.getMinutes();
 
     }, 1000);
 
-console.log(i++);
     </script>
 </body>
 </html>

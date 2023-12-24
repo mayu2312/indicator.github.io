@@ -39,7 +39,7 @@
 
 .child-content::after{
     content: "";
-    padding: 60px;
+    padding: 60px 100px;
     border-radius: 10px;
     background: linear-gradient(45deg, #4e00df, #6c02a5);
     right: -60px;
@@ -48,7 +48,7 @@
     margin: 20px;
 }
 
-.calendar {
+.calendar{
     text-align: center;
     font-weight: bold;
     font-size: 50px;
@@ -56,6 +56,37 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -100%);
+}
+
+.weather{
+    color: #fff;
+    font-size: 25px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.weather-icon{
+    position: absolute;
+    padding: 40px 40px;
+    background: url(./images/weather.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: -50px;
+    left: -10px;
+}
+
+#temp{
+    position: absolute;
+    top: 40px;
+    left: 5px;
+}
+
+#city{
+    position: absolute;
+    transform: rotate(90deg);
+    top: -10px;
+    left: -60px;
 }
 
 #day{
@@ -85,13 +116,32 @@
     background: linear-gradient(#ba6cfe, #7e005e);
     bottom: 15px;
     z-index: 1;
+    animation: 1s shrinking infinite;
+}
+
+@keyframes shrinking{
+    10% {
+        background: linear-gradient(20deg, #7e005e, #ba6cfe);
+}
+    30% {
+        background: linear-gradient(40deg, #ff5dd7, #ba6cfe);
+    }
+    60%{
+        background: linear-gradient(60deg, #ff00bf, #9524f7);
+    }
+    80%{
+        background: linear-gradient(80deg, #a2019d, #6f02f5f9);
+    }
+    100%{
+        background: linear-gradient(#a946ff, #7e005e);
+    }
 }
 
 #hrs, #mins, .space{
     position: relative;
     top: 50px;
-    color: #4740d6;
-    filter: brightness(2);
+    color: #524af1;
+    filter: brightnes(2);
     left: -10px;
 }
 
