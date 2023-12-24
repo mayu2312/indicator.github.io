@@ -24,14 +24,30 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    backdrop-filter: blur(40px);
+    border: 3px solid #fff;
+    animation: 3s infinite bordering ease-in-out;
+}
+
+@keyframes bordering{
+    0%{
+        border: 3px solid #996aff;
+    }
+    40%{
+        border: 3px solid #812cf8;
+    }
+    80%{
+        border: 3px solid #be0cff;
+    }
+    100%{
+        border: 3px solid #ab3eff;
+    }
 }
 
 .child-content::before{
     content: "";
     padding: 70px;
     border-radius: 20px;
-    background: linear-gradient(50deg, #2474ff, #4e00df);
+    background: linear-gradient(40deg, #ad1493, #4e00df);
     top: -50px;
     left: -30px;
     position: absolute;
@@ -42,10 +58,28 @@
     padding: 60px 100px;
     border-radius: 10px;
     background: linear-gradient(45deg, #4e00df, #6c02a5);
-    right: -60px;
-    bottom: -80px;
+    right: -40px;
+    bottom: -60px;
     position: absolute;
-    margin: 20px;
+}
+
+.backdrop-bottom-left{
+    padding: 80px 60px;
+    position: absolute;
+    background: linear-gradient(50deg, #7102e7, #c800ad);
+    border-radius: 10px;
+    top: 100px;
+    left: -300px;
+}
+
+.backdrop-top-right{
+    padding: 80px;
+    position: absolute;
+    background: linear-gradient(120deg, #3500a7, #d900ff);
+    border-radius: 50%;
+    top: -100px;
+    right: -380px;
+    backdrop-filter: blur(5px);
 }
 
 .calendar{
@@ -141,7 +175,7 @@
     position: relative;
     top: 50px;
     color: #524af1;
-    filter: brightnes(2);
+    filter: brightness(2);
     left: -10px;
 }
 
