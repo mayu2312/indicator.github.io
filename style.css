@@ -9,7 +9,7 @@
     width: 100%;
     min-height: 100vh;
     align-items: center;
-    background: linear-gradient(45deg, #2474ff, #24e5ff);
+    background: linear-gradient(55deg, #024ac6, #3fe2f8);
     color: #a770ff;
     position: relative;
 }
@@ -17,29 +17,29 @@
 .child-content{
     width: 800px;
     height: 240px;
-    background: linear-gradient(80deg, #320090, #5d1d70);
+    background: linear-gradient(80deg, #5b0e72, #384ef7);
     border-radius: 10px;
     display: flex;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 3px solid #fff;
     animation: 3s infinite bordering ease-in-out;
+    backdrop-filter: blur(10px);
 }
 
 @keyframes bordering{
     0%{
-        border: 3px solid #996aff;
+        border: 3px solid #5100ff;
     }
     40%{
-        border: 3px solid #812cf8;
+        border: 3px solid #0010bc;
     }
     80%{
-        border: 3px solid #be0cff;
+        border: 3px solid #0029bf;
     }
     100%{
-        border: 3px solid #ab3eff;
+        border: 3px solid #0068d6;
     }
 }
 
@@ -57,7 +57,7 @@
     content: "";
     padding: 60px 100px;
     border-radius: 10px;
-    background: linear-gradient(45deg, #4e00df, #6c02a5);
+    background: linear-gradient(45deg, #6f21ff, #6c02a5);
     right: -40px;
     bottom: -60px;
     position: absolute;
@@ -93,7 +93,7 @@
 }
 
 .weather{
-    color: #fff;
+    color: #eaff80;
     font-size: 25px;
     position: absolute;
     top: 10px;
