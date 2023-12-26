@@ -24,7 +24,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: 3s infinite bordering ease-in-out;
+    animation: 5s infinite bordering;
     backdrop-filter: blur(10px);
 }
 
@@ -33,10 +33,13 @@
         border: 3px solid #5100ff;
     }
     40%{
-        border: 3px solid #0010bc;
+        border: 3px solid #f7f301;
+    }
+    60%{
+        border: 3px solid #ff00bf
     }
     80%{
-        border: 3px solid #0029bf;
+        border: 3px solid #2dff08;
     }
     100%{
         border: 3px solid #0068d6;
