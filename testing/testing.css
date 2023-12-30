@@ -61,7 +61,7 @@
 }
 
 .weather-icon{
-    background: url(./images/weather.png);
+    background: url(.././images/weather.png);
     background-size: cover;
     background-repeat: no-repeat;
     padding: 50px;

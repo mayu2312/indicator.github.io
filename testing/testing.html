@@ -29,6 +29,60 @@
 
     let day = document.getElementById('day');
     let date = document.getElementById('date');
+    let hrs = document.getElementById('hrs');
+    let mins = document.getElementById('mins');
+    
+    let temp = document.getElementById('temp');
+    let city = document.getElementById('city');
+
+    const apiKey = "08f1dc9b8e07aecdc21e77c84b95a5bc";
+    const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=Jakarta";
+
+    async function weatherChecker(){
+        const response = await fetch(apiUrl + `&appid=${apiKey}`);
+        var weatherData = await response.json();
+
+        console.log(weatherData);
+
+        document.querySelector('#city').innerHTML = weatherData.name;
+        document.querySelector('#temp').innerHTML = Math.round(weatherData.main.temp) + "°C";
+    }
+
+    weatherChecker();
+
+    setInterval(()=>{
+        let syncTime = new Date;
+
+        const weekdays = [
+            'Sunday', 'Monday', 'Tuesday',
+            'Wednesday', 'Thursday', 'Friday',
+            'Saturday'
+        ];
+
+        const months = [
+            'January', 'February', 'March',
+            'April', 'May', 'June', 'July',
+            'August', 'September', 'October',
+            'November', 'December'
+        ];
+
+        let dates = [
+            syncTime.getDate(),
+            months[syncTime.getMonth()],
+            syncTime.getFullYear()
+        ];
+
+        let commasDates = dates.join(" ");
+
+        day.innerHTML = weekdays[syncTime.getDay()];
+        date.innerHTML = commasDates;
+
+        hrs.innerHTML = (syncTime.getHours()<10?"0":"")
+         + syncTime.getHours();
+
+        mins.innerHTML = (syncTime.getMinutes()<10?"0":"")
+         + syncTime.getMinutes();
+    }, 1000);
 
 </script>
 </html>
