@@ -16,7 +16,7 @@
 .child-content{
     width: 400px;
     height: 600px;
-    background: linear-gradient(60deg, #59ffa9, #e2ff05);
+    background: linear-gradient(60deg, #ff59d8, #e2ff05);
     border-radius: 20px;
     position: absolute;
     top: 50%;
@@ -31,7 +31,7 @@
     font-weight: bold;
     text-transform: uppercase;
     font-size: 50px;
-    color: #6f00ff;
+    color: #0015ff;
     top: 50%;
     left: 50%;
     position: absolute;
@@ -40,7 +40,7 @@
 
 #day{
     position: absolute;
-    top: -150px;
+    top: -170px;
     left: -30px;
 }
 
@@ -50,13 +50,53 @@
     top: -90px;
     display: flex;
     flex-wrap: nowrap;
+    box-sizing: border-box;
+    border-radius: 10px;
+    animation: border-date 2s infinite;
+    border-top: 4px solid #6f00ff;
+    border-right: 4px solid #c226ff;
+    border-bottom: 4px solid #d07fff;
+    border-left: 4px solid #f1abff;
+}
+
+@keyframes border-date{
+    20%{
+        border-top: 4px solid #6f00ff;
+        border-right: 4px solid #c226ff;
+        border-bottom: 4px solid #d07fff;
+        border-left: 4px solid #f1abff;
+    }
+    40%{
+        border-right: 4px solid #6f00ff;
+        border-bottom: 4px solid #c226ff;
+        border-left: 4px solid #d07fff;
+        border-top: 4px solid #f1abff;
+    }
+    60%{
+        border-bottom: 4px solid #6f00ff;
+        border-left: 4px solid #c226ff;
+        border-top: 4px solid #d07fff;
+        border-right: 4px solid #f1abff;
+    }
+    80%{
+        border-left: 4px solid #6f00ff;
+        border-bottom: 4px solid #c226ff;
+        border-left: 4px solid #d07fff;
+        border-top: 4px solid #f1abff;
+    }
+    100%{
+        border-top: 4px solid #6f00ff;
+        border-right: 4px solid #c226ff;
+        border-bottom: 4px solid #d07fff;
+        border-left: 4px solid #f1abff;
+    }
 }
 
 .weather{
     position: absolute;
     bottom: 190px;
     left: 150px;
-    color: #f34aff;
+    color: #0055ff;
     font-weight: bold;
 }
 
